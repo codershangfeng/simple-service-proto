@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package userservice;
+
+message User {
+    string id = 1;
+    string email = 2;
+    string username = 3;
+    string password = 4; // 1-15 -> 1 byte
+    enum Gender {
+        MALE = 0;
+        FEMALE = 1;
+    }
+    Gender gender = 16; // 16-2047 -> 2 bytes
+    string avatar = 17;
+}
+
+message CreateRequest {
+    User user = 1;
+    google.protobuf.Timestamp timestamp = 2;
+}
+
+message CreateResponse {
+    User user = 1;
+    google.protobuf.Timestamp timestamp = 2;
+}
+
+message QueryRequest {
+    repeated string userId = 1;
+}
+
+message QueryResponse {
+    repeated User users = 1;
+}
+
+service UserService {
+    rpc Create (CreateRequest) returns (CreateResponse);
+    rpc Query (QueryRequest) returns (QueryResponse);
+}
