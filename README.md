@@ -4,4 +4,4 @@ The shared protobuf repository for simple service, and should be used as a submo
 ## Key Commands
 
 - Generate Code
-    - Golang: `protoc --go_out=plugins=grpc:. [Path of Proto file]`
+    - Golang: `make generate`

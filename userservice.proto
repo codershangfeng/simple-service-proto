@@ -18,8 +18,9 @@ message User {
 }
 
 message CreateRequest {
-    User user = 1;
+    string result = 1;
     google.protobuf.Timestamp timestamp = 2;
+    User user = 16;
 }
 
 message CreateResponse {
