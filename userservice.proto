@@ -6,15 +6,15 @@ package userservice;
 
 message User {
     string id = 1;
-    string email = 2;
-    string username = 3;
-    string password = 4; // 1-15 -> 1 byte
+    string username = 2;
+    string password = 3; // 1-15 -> 1 byte
+    string email = 16; // 16-2047 -> 2 bytes
     enum Gender {
         MALE = 0;
         FEMALE = 1;
     }
-    Gender gender = 16; // 16-2047 -> 2 bytes
-    string avatar = 17;
+    Gender gender = 17;
+    string avatar = 18;
 }
 
 message CreateRequest {
