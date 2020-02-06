@@ -14,4 +14,4 @@ The shared protobuf repository for simple service, and should be used as a submo
 ## Key Commands
 
 - Generate Code
-    - Golang: `make generate`
+    - Golang: `make generate PROTO=[Path of proto file]` 

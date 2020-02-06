@@ -1,3 +1,6 @@
+# Proto file name 
+PROTO?=""
+
 .PHONY: generate
 generate:
-	protoc --go_out=plugins=grpc:. userservice.proto
+	protoc --go_out=plugins=grpc:.  $(PROTO)
