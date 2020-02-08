@@ -1,6 +1,6 @@
 # Proto file name 
 PROTO?=""
 
-.PHONY: generate
-generate:
+.PHONY: go
+go:
 	protoc --go_out=plugins=grpc:.  $(PROTO)
